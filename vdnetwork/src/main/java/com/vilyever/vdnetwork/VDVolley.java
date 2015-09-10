@@ -63,7 +63,7 @@ public class VDVolley {
 
             String identifier = mIdentifier;
             if (identifier == null) {
-                identifier = url;
+                identifier = url + params.toString();
             }
 
             // cancel last similar request
