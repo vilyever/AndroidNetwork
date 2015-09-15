@@ -128,7 +128,7 @@ public class VDVolley {
 
         @Override
         public void deliverError(VolleyError error) {
-            mDelegate.willRetryOnOccurError(new VDNetworkError(error));
+            mDelegate.didOccurError(new VDNetworkError(error));
         }
 
         public static Map<String, String> getMappedParams(JSONObject params)
