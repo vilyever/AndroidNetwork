@@ -35,7 +35,7 @@ public class VDNetwork<T> {
     public VDNetworkRequest fetchData(String url, JSONObject params, VDNetworkDelegate delegate) {
         return new VDNetworkRequest(new VDVolley.VDJsonClient<>(mClass, mIdentifier).fetchData(url, params, delegate));
     }
-    
+
     /* #Overrides */    
     
     /* #Accessors */     

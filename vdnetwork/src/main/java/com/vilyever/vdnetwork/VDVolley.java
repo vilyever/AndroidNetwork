@@ -63,12 +63,8 @@ public class VDVolley {
 
             String identifier = mIdentifier;
             if (identifier == null) {
-                identifier = url + params.toString();
+                identifier = url + (params == null ? "" : params.toString());
             }
-
-            // cancel last similar request
-            // e.g. 加载评论最多数据未加载完成时用户又执行了切换点击量最多的数据，这时就应取消先前未完成的加载评论最多数据的操作
-            VDVolleyRequestManager.getRequestQueue().cancelAll(identifier);
 
             VDJsonRequest<T> request = new VDJsonRequest<>(Request.Method.POST
                     , uri
@@ -77,6 +73,10 @@ public class VDVolley {
                     , delegate);
 
             request.setTag(identifier);
+
+            // cancel last similar request
+            // e.g. 加载评论最多数据未加载完成时用户又执行了切换点击量最多的数据，这时就应取消先前未完成的加载评论最多数据的操作
+            VDVolleyRequestManager.getRequestQueue().cancelAll(request.getTag());
             VDVolleyRequestManager.getRequestQueue().add(request);
 
             return request;
@@ -128,7 +128,7 @@ public class VDVolley {
 
         @Override
         public void deliverError(VolleyError error) {
-            mDelegate.didOccurError(new VDNetworkError(error));
+            mDelegate.willRetryOnOccurError(new VDNetworkError(error));
         }
 
         public static Map<String, String> getMappedParams(JSONObject params)

@@ -38,7 +38,7 @@ new VDNetwork<>(Model.class).fetchData("http://xxx", params, new VDNetworkDelega
     }
 
     @Override
-    public void didOccurError(VDNetworkError error) {
+    public void willRetryOnOccurError(VDNetworkError error) {
         
     }
 });
