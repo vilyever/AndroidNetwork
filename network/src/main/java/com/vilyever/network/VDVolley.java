@@ -1,4 +1,4 @@
-package com.vilyever.vdnetwork;
+package com.vilyever.network;
 
 import android.content.Context;
 import android.net.Uri;

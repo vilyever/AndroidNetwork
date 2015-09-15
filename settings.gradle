@@ -1,1 +1,1 @@
-include ':app', ':vdnetwork'
+include ':app', ':network'

@@ -1,4 +1,4 @@
-package com.vilyever.vdnetwork;
+package com.vilyever.network;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.VolleyError;

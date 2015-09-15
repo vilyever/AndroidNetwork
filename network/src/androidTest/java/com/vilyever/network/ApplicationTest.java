@@ -1,4 +1,4 @@
-package com.vilyever.vdnetwork;
+package com.vilyever.network;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
