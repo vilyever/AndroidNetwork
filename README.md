@@ -17,7 +17,7 @@ Step 2. Add the dependency in the form
 
 ```gradle
 dependencies {
-  compile 'com.github.vilyever:AndroidNetwork:1.0.0'
+  compile 'com.github.vilyever:AndroidNetwork:1.0.1'
 }
 ```
 
@@ -38,7 +38,7 @@ new VDNetwork<>(Model.class).fetchData("http://xxx", params, new VDNetworkDelega
     }
 
     @Override
-    public void willRetryOnOccurError(VDNetworkError error) {
+    public void didOccurError(VDNetworkError error) {
         
     }
 });
